@@ -1,0 +1,16 @@
+C:\Users\matth\source\repos\MattyList\MattyListTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\matth\source\repos\MattyList\MattyListTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\matth\source\repos\MattyList\MattyListTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\matth\source\repos\MattyList\MattyListTest\bin\Debug\MattyListTest.dll
+C:\Users\matth\source\repos\MattyList\MattyListTest\bin\Debug\MattyListTest.pdb
+C:\Users\matth\source\repos\MattyList\MattyListTest\bin\Debug\MattyList.exe
+C:\Users\matth\source\repos\MattyList\MattyListTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\matth\source\repos\MattyList\MattyListTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\matth\source\repos\MattyList\MattyListTest\bin\Debug\MattyList.pdb
+C:\Users\matth\source\repos\MattyList\MattyListTest\bin\Debug\MattyList.exe.config
+C:\Users\matth\source\repos\MattyList\MattyListTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\matth\source\repos\MattyList\MattyListTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\matth\source\repos\MattyList\MattyListTest\obj\Debug\MattyListTest.csprojAssemblyReference.cache
+C:\Users\matth\source\repos\MattyList\MattyListTest\obj\Debug\MattyListTest.csproj.CopyComplete
+C:\Users\matth\source\repos\MattyList\MattyListTest\obj\Debug\MattyListTest.dll
+C:\Users\matth\source\repos\MattyList\MattyListTest\obj\Debug\MattyListTest.pdb

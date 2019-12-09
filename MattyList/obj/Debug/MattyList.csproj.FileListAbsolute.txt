@@ -1,0 +1,6 @@
+C:\Users\matth\source\repos\MattyList\MattyList\bin\Debug\MattyList.exe.config
+C:\Users\matth\source\repos\MattyList\MattyList\bin\Debug\MattyList.exe
+C:\Users\matth\source\repos\MattyList\MattyList\bin\Debug\MattyList.pdb
+C:\Users\matth\source\repos\MattyList\MattyList\obj\Debug\MattyList.csprojAssemblyReference.cache
+C:\Users\matth\source\repos\MattyList\MattyList\obj\Debug\MattyList.exe
+C:\Users\matth\source\repos\MattyList\MattyList\obj\Debug\MattyList.pdb
