@@ -45,7 +45,7 @@ namespace MattyList
             }
             return b;
 
-            return newList;
+            
         }
 
         public T this[int i]
@@ -91,10 +91,7 @@ namespace MattyList
         }
 
         public void Add(T input)
-        { 
-            
-            
-            
+        {         
             if (Count == capacity)
             {
                 capacity *= 2;
@@ -103,8 +100,7 @@ namespace MattyList
 
             for(int i = 0; i < Count; i++)
             {
-                tempArray[i] = mattyArray[i];   
-                               
+                tempArray[i] = mattyArray[i];                                 
             }
             mattyArray = tempArray;
             mattyArray[Count] = input;
@@ -132,7 +128,7 @@ namespace MattyList
             int i = 0;         
                 for(i=0; i < Count; i++)
                 {
-                    if (userInput.Equals(mattyArray[i + 1]))
+                    if (userInput.Equals(mattyArray[i]))
                     {
                         DecrementCount(1);
                     }
@@ -143,9 +139,56 @@ namespace MattyList
                     
                     
                 }
-                mattyArray = tempArray;
-            
+                mattyArray = tempArray;            
         }
+
+        public void Zip(MattyList<T> userInput)
+        {
+            MattyList<T> tempArray = new MattyList<T>();
+            int x = userInput.count;
+            int y = Count;
+
+            for (int i = 0; i < y || i < x ; i++)
+            {
+                if (count == 0)
+                {
+                    tempArray.Add(userInput[i]);
+                    userInput.count--;
+
+
+                }
+                else if(userInput.Count == 0)
+                {
+                    tempArray.Add(mattyArray[i]);
+                    DecrementCount(1);
+
+                }
+                else
+                {
+                    tempArray.Add(userInput[i]);
+                    tempArray.Add(mattyArray[i]);
+                    userInput.count--;
+                    DecrementCount(1);
+                }
+                
+                
+            }
+            
+            mattyArray = new T[tempArray.count]; 
+            for (int i = 0; i < tempArray.Count; i++)
+            {   
+                count = tempArray.Count; 
+                if (Count >= Capacity)
+                {
+                capacity *= 2;
+                }
+                 mattyArray[i] = tempArray[i];
+            }
+            
+            
+           
+        }
+
         public void DecrementCount(int numberOfInputs)
         {
             for (int i = 0; i < numberOfInputs; i++)

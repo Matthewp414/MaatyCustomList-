@@ -262,6 +262,156 @@ namespace MattyListTest
             //Assert
             Assert.AreEqual(excepected, actual);
         }
+        [TestMethod]
+        public void PlustOverLoadUnitTest1_String_ArrayOf_T()
+        {
+            //Arrange
+            MattyList<string> list1 = new MattyList<string> { "1"};
+            MattyList<string> list2 = new MattyList<string> { "1"};
+            MattyList<string> list3 = list1 - list2;
+
+            string excepected = null;
+
+            //Act
+            
+            string actual = list3[0];
+
+
+
+            //Assert
+            Assert.AreEqual(excepected, actual);
+        }
+        [TestMethod]
+        public void MinusOverLoadUnitTest1_String_ArrayOf_T()
+        {
+            //Arrange
+            MattyList<string> list1 = new MattyList<string> { "1" };
+            MattyList<string> list2 = new MattyList<string> { "1" };
+            MattyList<string> list3 = list1 + list2;
+
+            string excepected = "1";
+            string excepected2 = "1";
+
+
+            //Act
+
+
+            string actual = list3[0];
+            string actual2 = list3[0];
+
+
+
+
+            //Assert
+            Assert.AreEqual(excepected, actual);
+            Assert.AreEqual(excepected2, actual2);
+
+        }
+        [TestMethod]
+
+        public void ZipUnitTest_Int_ArrayOf_T()
+        {
+            //Arrange
+            MattyList<int> list1 = new MattyList<int> { 1, 2, 3 };
+            MattyList<int> list2 = new MattyList<int> { 1, 2, 3 };
+            
+
+            int excepected = 1;
+            int excepected2 = 1;
+
+
+            //Act
+            list1.Zip(list2);
+
+            int actual = list1[0];
+            int actual2 = list1[1];
+
+
+
+
+            //Assert
+            Assert.AreEqual(excepected, actual);
+            Assert.AreEqual(excepected2, actual2);
+
+        }
+        [TestMethod]
+
+        public void ZipUnitTest2_Int_ArrayOf_T()
+        {
+            //Arrange
+            MattyList<int> list1 = new MattyList<int> { 1, 2, 3 };
+            MattyList<int> list2 = new MattyList<int> { 1, 2, 3 };
+
+
+            int excepected = 2;
+            int excepected2 = 2;
+
+
+            //Act
+            list1.Zip(list2);
+
+            int actual = list1[2];
+            int actual2 = list1[3];
+
+
+
+
+            //Assert
+            Assert.AreEqual(excepected, actual);
+            Assert.AreEqual(excepected2, actual2);
+
+        }
+        [TestMethod]
+        public void ZipUnitTest3_Int_ArrayOf_T()
+        {
+            //Arrange
+            MattyList<int> list1 = new MattyList<int> { 1, 2, 3 };
+            MattyList<int> list2 = new MattyList<int> { 1, 2, 3 };
+
+
+            int excepected = 8;
+            
+
+
+            //Act
+            list1.Zip(list2);
+
+            int actual = list1.Capacity;
+            
+
+
+
+            //Assert
+            Assert.AreEqual(excepected, actual);
+            
+
+        }
+        [TestMethod]
+
+        public void ZipUnitTest4_Int_ArrayOf_T()
+        {
+            //Arrange
+            MattyList<int> list1 = new MattyList<int> { 1, 2, 3 };
+            MattyList<int> list2 = new MattyList<int> { 1, 2, 3 };
+
+
+            int excepected = 6;
+
+
+
+            //Act
+            list1.Zip(list2);
+
+            int actual = list1.Count;
+
+
+
+
+            //Assert
+            Assert.AreEqual(excepected, actual);
+
+
+        }
     }
 }
 
