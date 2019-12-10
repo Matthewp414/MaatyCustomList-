@@ -38,7 +38,7 @@ namespace MattyListTest
             int excepected =  1;
 
             //Act
-            list.MattyAdd(1);
+            list.Add(1);
             int actual = list[0];
             //Assert
             Assert.AreEqual(excepected, actual);
@@ -53,7 +53,7 @@ namespace MattyListTest
              string excepected = "hey";
 
             //Act
-            list.MattyAdd("hey");
+            list.Add("hey");
             string actual = list[0];
             //Assert
             Assert.AreEqual(excepected, actual);
@@ -70,8 +70,8 @@ namespace MattyListTest
             double excepected2 = 0;   
 
             //Act
-            list.MattyAdd(1);
-            list.MattyAdd(0);
+            list.Add(1);
+            list.Add(0);
             double actual = list[0];
             double actual2 = list[1];
             //Assert
@@ -91,8 +91,8 @@ namespace MattyListTest
             decimal excepected2 =  2.2m;
 
             //Act
-            list.MattyAdd(2.1m);
-            list.MattyAdd(2.2m);
+            list.Add(2.1m);
+            list.Add(2.2m);
             decimal actual = list[0];
             decimal actual2 = list[1];
             //Assert
@@ -109,12 +109,12 @@ namespace MattyListTest
             
 
             //Act
-            list.MattyAdd(2.1m);
-            list.MattyAdd(2.2m);
-            list.MattyAdd(2.3m);
-            list.MattyAdd(2.4m);
-            list.MattyAdd(2.5m);
-            list.MattyAdd(2.6m);
+            list.Add(2.1m);
+            list.Add(2.2m);
+            list.Add(2.3m);
+            list.Add(2.4m);
+            list.Add(2.5m);
+            list.Add(2.6m);
 
             int actual = list.Capacity;
             
@@ -131,9 +131,9 @@ namespace MattyListTest
 
 
             //Act
-            list.MattyAdd("Hi");
-            list.MattyAdd("Guy");
-            list.MattyAdd("What");
+            list.Add("Hi");
+            list.Add("Guy");
+            list.Add("What");
             list.MattyRemove( "What");
             int actual = list.Count;
 
@@ -147,14 +147,16 @@ namespace MattyListTest
             //Arrange
             MattyList<string> list = new MattyList<string>();
 
-            MattyList<string> excepected = new MattyList<string>[] { "Hi", "Guy" };
+            string excepected = null;
+            
+
 
             //Act
-            list.MattyAdd("Hi");
-            list.MattyAdd("Guy");
-            list.MattyAdd("What");
+            list.Add("Hi");
+            list.Add("Guy");
+            list.Add("What");
             list.MattyRemove("What");
-            MattyList<string> actual = list;
+            string actual = list[3];
 
 
             //Assert
@@ -166,18 +168,23 @@ namespace MattyListTest
             //Arrange
             MattyList<string> list = new MattyList<string>();
 
-            MattyList<string> excepected = new MattyList<string>[] { "Hi"};
+            string excepected = null;
+            string excepected2 = null;
+
 
             //Act
-            list.MattyAdd("Hi");
-            list.MattyAdd("Guy");
-            list.MattyAdd("What");
+            list.Add("Hi");
+            list.Add("Guy");
+            list.Add("What");
             list.MattyRemove("What");
             list.MattyRemove("Guy");
-            MattyList <string> actual = list;
+            string actual = list[1];
+            string actual2 = list[2];
 
             //Assert
             Assert.AreEqual(excepected, actual);
+            Assert.AreEqual(excepected2, actual2);
+
         }
         [TestMethod]
         public void RemoveUnitTest4_Int_ArrayOf_T()
@@ -188,9 +195,9 @@ namespace MattyListTest
             int excepected = 3;
 
             //Act
-            list.MattyAdd("Hi");
-            list.MattyAdd("Guy");
-            list.MattyAdd("What");
+            list.Add("Hi");
+            list.Add("Guy");
+            list.Add("What");
             list.MattyRemove("a");
 
             int actual = list.Count;
@@ -207,9 +214,9 @@ namespace MattyListTest
             int excepected = 2;
 
             //Act
-            list.MattyAdd(1);
-            list.MattyAdd(2);
-            list.MattyAdd(3);
+            list.Add(1);
+            list.Add(2);
+            list.Add(3);
             list.MattyRemove(1);
 
             int actual = list.Count;
@@ -221,16 +228,17 @@ namespace MattyListTest
         public void ToStringUnitTest1_String_ArrayOf_T()
         {
             //Arrange
-            MattyList<int> list = new MattyList<int>();
+            MattyList<string> list = new MattyList<string>();
 
-            string excepected = "1";
+            string excepected = "a b c ";
 
             //Act
-            list.MattyAdd(1);
-
-            list.MattyToString();
+            list.Add("a");
+            list.Add("b");
+            list.Add("c");
             
-            string actual = list[0];
+            
+            string actual = list.MattyToString();
 
             //Assert
             Assert.AreEqual(excepected, actual);
@@ -241,14 +249,15 @@ namespace MattyListTest
             //Arrange
             MattyList<double> list = new MattyList<double>();
 
-            string excepected = "1";
+            string excepected = "1 2 3 ";
 
             //Act
-            list.MattyAdd(1.0);
+            list.Add(1);
+            list.Add(2);
+            list.Add(3);
+            string actual = list.MattyToString();
 
-            list.MattyToString();
-
-            string actual = list[0];
+             
 
             //Assert
             Assert.AreEqual(excepected, actual);

@@ -15,12 +15,15 @@ namespace MattyList
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            for (int i = 0; i < Count ; i++)
+            for (int i = 0; i < Count; i++)
             {
+
                 yield return mattyArray[i];
 
-            }    
+            }
         }
+        
+
         public T this[int i]
         {
             get 
@@ -63,20 +66,25 @@ namespace MattyList
             
         }
 
-        public void MattyAdd(T input)
+        public void Add(T input)
         { 
-            T[] tempArray = new T[capacity];
-            IncrementCount(1);
-            if (Count >= capacity)
+            
+            
+            
+            if (Count == capacity)
             {
                 capacity *= 2;
-            } 
+            }
+            T[] tempArray = new T[capacity]; 
+
             for(int i = 0; i < Count; i++)
             {
-                tempArray[i] = mattyArray[i];                   
+                tempArray[i] = mattyArray[i];   
+                               
             }
             mattyArray = tempArray;
             mattyArray[Count] = input;
+            IncrementCount(1);
         }
 
         public void IncrementCount(int numberOfInputs)
@@ -100,18 +108,19 @@ namespace MattyList
             int i = 0;         
                 for(i=0; i < Count; i++)
                 {
-                    if (userInput.Equals(mattyArray[i]))
+                    if (userInput.Equals(mattyArray[i + 1]))
                     {
-
+                        DecrementCount(1);
                     }
                     else
                     {
                         tempArray[i] = mattyArray[i];
                     }
-                    mattyArray = tempArray;
+                    
+                    
                 }
+                mattyArray = tempArray;
             
-            DecrementCount(1);
         }
         public void DecrementCount(int numberOfInputs)
         {
@@ -121,14 +130,14 @@ namespace MattyList
             }
             
         }
-        public void MattyToString()
+        public string MattyToString()
         {
-            StringBuilder sb;
+            string newString = "";
             for (int i = 0; i < Count; i++ )
             {
-                
-                ;
+                newString += mattyArray[i].ToString() + " ";               
             }
+            return newString;
         }
     }
 }
