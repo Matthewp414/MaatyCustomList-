@@ -3,15 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections;
 
 namespace MattyList
 {
-    public class MattyList<T>
+    public class MattyList<T> : IEnumerable
     {
         T[] mattyArray;
         int count = 0;
         int capacity = 4;
 
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            for (int i = 0; i < Count ; i++)
+            {
+                yield return mattyArray[i];
+
+            }    
+        }
         public T this[int i]
         {
             get 
