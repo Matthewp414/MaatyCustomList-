@@ -22,7 +22,31 @@ namespace MattyList
 
             }
         }
-        
+        public static MattyList<T> operator +(MattyList<T> b, MattyList<T> c)
+        {
+            MattyList<T> newList = new MattyList<T>();
+            for (int i = 0; i < b.Count; i++ )
+            {
+                newList.Add(b[i]);
+            }
+            for (int i = 0; i < c.Count; i++)
+            {
+                newList.Add(c[i]);
+            }
+            return newList;
+        }
+        public static MattyList<T> operator -(MattyList<T> b, MattyList<T> c)
+        {
+            MattyList<T> newList = new MattyList<T>();
+
+            for (int i = 0; i < b.Count; i++)
+            {
+                b.MattyRemove(c[i]);
+            }
+            return b;
+
+            return newList;
+        }
 
         public T this[int i]
         {
